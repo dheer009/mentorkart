@@ -1,1 +1,1 @@
-172.16.132.143 ansible_user=Dheer ansible_ssh_pass=pass
+172.16.132.143 ansible_ssh_pass=12345678 ansible_ssh_user=dheer
