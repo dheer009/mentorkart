@@ -290,4 +290,5 @@ public class MenteeEntityService
         menteeRepository.save(mentee);
         return "Balance is set";
     }
+    //new feature
 }
