@@ -4,14 +4,14 @@ services:
   mysqldb-container:
     image: mysql
     container_name: mysqldb-container
-#    volumes:
-#      - mysql-data:/var/lib/mysql
+    #    volumes:
+    #      - mysql-data:/var/lib/mysql
     networks:
       - my_net
     environment:
-#       - MYSQL_ROOT_PASSWORD=password
-#       - MYSQL_DATABASE=test
-#       - MYSQL_USER=root
+      #       - MYSQL_ROOT_PASSWORD=password
+      #       - MYSQL_DATABASE=test
+      #       - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=root
 
   backend:
@@ -24,8 +24,7 @@ services:
     links:
       - mysqldb-container
     depends_on:
-      mysqldb-container:
-        condition: service_healthy
+      - mysqldb-container
 
   frontend:
     image: dheer009/frontend
