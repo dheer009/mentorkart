@@ -2,18 +2,18 @@ version: "2.4"
 services:
 
   mysqldb-container:
-    image: mysql
+    image: mysql/mysql-server
     container_name: mysqldb-container
     #    volumes:
     #      - mysql-data:/var/lib/mysql
     networks:
       - my_net
-    ports:
-      - "3000:3000"
+
     environment:
       - MYSQL_ROOT_PASSWORD=password
-#       - MYSQL_DATABASE=test
-#       - MYSQL_USER=root
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
 
   backend:
     image: dheer009/backend
