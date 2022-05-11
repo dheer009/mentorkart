@@ -33,7 +33,7 @@
             <optional>true</optional>
         </dependency>
              
-             <dependency><groupid>org.springbootframework.boot</groupid>
+             <dependency><groupid>org.springframework.boot</groupid>
                       <artifactId>spring-boot-autoconfig</artifactId>
                       <version>2.6.5</version>
              </dependency>
