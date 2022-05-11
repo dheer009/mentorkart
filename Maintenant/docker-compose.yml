@@ -9,7 +9,7 @@ services:
     networks:
       - my_net
     ports:
-      - "3306:3306"
+      - "3000:3000"
     environment:
       - MYSQL_ROOT_PASSWORD=password
 #       - MYSQL_DATABASE=test
