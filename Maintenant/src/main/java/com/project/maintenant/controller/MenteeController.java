@@ -8,16 +8,20 @@ import com.project.maintenant.services.MentorEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
+
 
 @RestController
 @CrossOrigin(origins="*")
 //@CrossOrigin(origins = "http://localhost:56629/")
 public class MenteeController
 {
-
+    private static final Logger logger = LoggerFactory.getLogger(MenteeController.class);
 @Autowired
 private MenteeEntityService menteeEntityService;
 @Autowired
@@ -74,7 +78,9 @@ private MentorEntityService mentorEntityService;
 
     @PostMapping("/mentee/login")
     public ResponseEntity<?> login(@RequestBody Map<String,Object> payload){
+        logger.info("Inside mentee logged in");
         if (menteeEntityService.login(payload)!=null){
+            logger.info("Mentee logged in successfully!");
             return ResponseEntity.ok(menteeEntityService.login(payload));
         }
         else
